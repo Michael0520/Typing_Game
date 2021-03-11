@@ -92,9 +92,14 @@ addWordToDOM();
 text.addEventListener("input", (e) => {
   const insertedText = e.target.value;
   if (insertedText === randomWord) {
-    addWordToDOM();
-    updateScore();
-    // Clear
-    e.target.value = "";
+    setTimeout(() => {
+      addWordToDOM();
+      updateScore();
+      // Clear
+      e.target.value = "";
+
+      time = 10;
+      updateTime();
+    }, 200);
   }
 });
